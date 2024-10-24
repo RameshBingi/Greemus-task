@@ -96,7 +96,7 @@ Create an HTML page (index.html):
 Push changes:
 git add index.html
 git push origin task
-Visit your website:https://github.com/Sumanth65/portfolio.git
+Visit your website:https://rameshbingi.github.io/Greemus-task/
 
 6. Working with Git Tags
 Objective: Understand how to use tags in Git for marking releases.
