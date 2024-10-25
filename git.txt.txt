@@ -1,3 +1,4 @@
+------------------------------------------------GIT-------------------------------------------------------------------------
 
 1. Basic Git Workflow
 Objective: Learn the basics of Git, including initializing a repository, adding files, making commits, and pushing to a remote repository.
@@ -20,6 +21,8 @@ Connect to a remote repository:
 git remote add origin https://github.com/RameshBingi/Greemus.com.git
 Push changes to GitHub:
 git push -u origin task 
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 2. Branching and Merging
 Objective: Understand how to create branches, switch between them, and merge branches.
@@ -45,6 +48,8 @@ Edit conflicting files and then commit the resolution
 git add <conflicted-file>
 git commit -m "Resolve merge conflict"
 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 3. Collaborative Workflow
 Objective: Learn to collaborate on projects using Git, including cloning repositories, creating pull requests, and conducting code reviews.
 
@@ -69,6 +74,8 @@ git push origin update-history
 Create a pull request on GitHub.
 Review and merge the pull request.
 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 4. Reverting Changes
 Objective: Learn how to undo changes in Git using git revert, git reset, and git checkout.
 Scenario:
@@ -83,6 +90,8 @@ Revert the last commit:
 git reset --soft HEAD~1
 git reset --hard HEAD~1
 git revert ff33437f31b0f6d81441a6d2bdeb3f26746f5ce6
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 5. Using Git with GitHub Pages
@@ -113,6 +122,8 @@ git tag -a v1.1 -m "Release version 1.1"
 Push the all Tags to the remote repository:
 git push origin --tags
 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 7. Stashing Changes
 Objective: Learn how to temporarily save changes using git stash and apply them later.
 Scenario:
@@ -132,6 +143,8 @@ stash pop ---> apply & remove
 stash  to save also  the untracked files  
 stash -u file name
 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 8. Exploring Git History
 Objective: Learn to explore the commit history using git log and git diff.
 Scenario:
@@ -141,6 +154,71 @@ View the commit history:
 git log
 See the differences between commits:
 git diff <commit1> <commit2>
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+9 Git Hooks
+
+ Initialize a Git Repository
+mkdir hoocks
+cd hoocks
+git init
+git add hoocks.txt
+git commit -m "hoocks"
+Step 2: Create the Pre-commit Hook
+cd .git/hooks
+touch pre-commit
+chmod +x pre-commit  # Make it executable
+pip install flake8
+#!/bin/sh
+
+# Run flake8 to check for linting issues
+if ! flake8 script.py; then
+    echo "Linting errors detected. Please fix them before committing."
+    exit 1  # Prevent commit
+fi
+
+echo "Linting passed. Proceeding with commit."
+Step 3: Test the Pre-commit Hook
+def my_function():  
+    system.outprintln('Hello, World!')
+git add hoock.txt
+git commit -m "Test commit with linting error"
+def my_function():
+    system.out.print('Hello, World!')
+git add hoock.txt
+git commit -m "Fix linting error"
+
+-----------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------
+10. Git Rebase
+
+1:Create a new project folder:
+mkdir rebase
+cd rebase
+2:Initialize a Git repository:
+git init
+git add rebase.txt
+git commit -m "git rebase"
+ 2: Create and Work on a Feature Branch
+git checkout -b feature/my-feature
+echo "print('Hello from my feature!')" >>rebase.txt
+Stage and commit your changes:
+git add rebase.txt
+git commit -m "Add rebase"
+Make another change 
+echo "print('Another change in my feature!')" >> rebase.txt
+Stage and commit this change:
+git add arebase
+git commit -m "chanege rebase"
+3: Update the Main Branch
+git checkout main
+echo "print('New update in main!')" >> rebase.txt
+git add rebase.txt
+git commit -m "Update main with new message"
+4: Rebase the Feature Branch onto Main
+git checkout feature/my-feature
+Verify the rebase:
+git log --oneline --graph --all
 
 
  
